@@ -22,9 +22,8 @@ const float GRAVITY = 2.5;
 const int HEIGHTMAP = 47;
 
 // Frames
-int FramesSpeed   = 0, FramesSpeed2  = 0;
 int FramesCounter = 0;
-int CurrentFrame  = 0, CurrentFrame2 = 0;
+int CurrentFrame  = 0;
 
 // Textures game
 Texture2D TXmap, TXplayer1, TXplayer2, TXplayer1Inverse, TXplayer2Inverse,

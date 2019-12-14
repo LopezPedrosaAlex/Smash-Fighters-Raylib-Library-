@@ -33,7 +33,8 @@ public:
     float pos_y() { return position.y; }
     int life()    { return Plife; }
     int way() { return direction; }
-    void draw(Texture2D player, Texture2D playerinverse, Texture2D playerSR, Texture2D playerSD,
+    void draw(Texture2D player, Texture2D playerinverse,
+              Texture2D playerSR, Texture2D playerSD,
               bool left, bool right, bool down);
     void move(Texture2D player, bool left, bool right);
     void jump();
@@ -59,30 +60,37 @@ void Player::draw(Texture2D player, Texture2D playerinverse, Texture2D playerSR,
     
     if( !left && !right && !down )
     {
-        if(direction != -1) { DrawTextureRec(player, frameRec, position, WHITE); }
-        if(direction == -1) { DrawTextureRec(playerinverse, frameRec, position, WHITE); }
-    }
-    if( left && !down )
-    {
-        if (CurrentFrame > 5)
+        if(direction == 1)
         {
-            CurrentFrame = 0;
-            FramesSpeed --;
+            DrawTextureRec(player, frameRec, position, WHITE);
         }
-        frameRec.x = FramesSpeed * playerinverse.width/6;
+        if(direction == -1)
+        {
+            frameRec.x = 5 * playerinverse.width/6;
+            DrawTextureRec(playerinverse, frameRec, position, WHITE);
+        }
+    }
+    if( left && !down)
+    {
+        if (FramesCounter > 5)
+        {
+            FramesCounter = 0;
+            if (!saltant) CurrentFrame++;
+        }
+        frameRec.x = (5 - CurrentFrame) * playerinverse.width/6;
         DrawTextureRec(playerinverse, frameRec, position, WHITE);
     }
-    if( right && !down )
+    if(right && !down)
     {
-        if (CurrentFrame > 5)
+        if (FramesCounter > 5)
         {
-            CurrentFrame = 0;
-            FramesSpeed ++;
+            FramesCounter = 0;
+            if (!saltant) CurrentFrame ++;
         }
-        frameRec.x = FramesSpeed * TXplayer1.width/6;
+        frameRec.x = CurrentFrame * TXplayer1.width/6;
         DrawTextureRec(player, frameRec, position, WHITE);
     }
-    if( down )
+    if(down)
     {
         if(direction != -1) { DrawTextureRec(playerSR, frameRec, position, WHITE); }
         if(direction == -1) { DrawTextureRec(playerSD, frameRec, position, WHITE); }
@@ -91,11 +99,11 @@ void Player::draw(Texture2D player, Texture2D playerinverse, Texture2D playerSR,
 
 void Player::move(Texture2D player, bool left, bool right)
 {
-    if (left)  { position.x -= 3.0f; direction = -1; CurrentFrame++; }
-    if (right) { position.x += 3.0f; direction =  1; CurrentFrame++; }
+    if (left)  { position.x -= 3.0f; direction = -1; FramesCounter++; }
+    if (right) { position.x += 3.0f; direction =  1; FramesCounter++; }
     
-    if(position.x > SCREENWIDTH) { position.x -= SCREENWIDTH; }
-    if(position.x < 0)           { position.x  = SCREENWIDTH; }
+    if(position.x > SCREENWIDTH)            { position.x -= SCREENWIDTH + player.width/6; }
+    if(position.x + player.width/6 < 0)  	{ position.x  = SCREENWIDTH; }
     
     if (saltant) {
         velocity.y -= GRAVITY * 0.1;

@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA6795912383EED100DACF6B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA6795902383EED100DACF6B /* main.cpp */; };
 		FA6795992383EEF600DACF6B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6795982383EEF600DACF6B /* OpenGL.framework */; };
 		FA67959B2383EF5300DACF6B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA67959A2383EF5300DACF6B /* CoreVideo.framework */; };
 		FA67959D2383EF5A00DACF6B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA67959C2383EF5900DACF6B /* Cocoa.framework */; };
 		FA67959F2383EF6200DACF6B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA67959E2383EF6200DACF6B /* IOKit.framework */; };
 		FA6795A12383EF7800DACF6B /* libraylib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6795A02383EF7800DACF6B /* libraylib.a */; };
+		FAF02CF023A2E814000935FF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAF02CEC23A2E814000935FF /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,18 +28,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FA4B9E9C23875B570089FF43 /* Platforms.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = Platforms.hpp; sourceTree = "<group>"; };
-		FA4B9E9E238760F80089FF43 /* constants.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = constants.hpp; sourceTree = "<group>"; };
-		FA4B9E9F2387669D0089FF43 /* Players.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = Players.hpp; sourceTree = "<group>"; };
-		FA4B9EA3238769800089FF43 /* Shot.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = Shot.hpp; sourceTree = "<group>"; };
 		FA67958D2383EED100DACF6B /* Smash_Fighters */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Smash_Fighters; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA6795902383EED100DACF6B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		FA6795982383EEF600DACF6B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		FA67959A2383EF5300DACF6B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		FA67959C2383EF5900DACF6B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FA67959E2383EF6200DACF6B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		FA6795A02383EF7800DACF6B /* libraylib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libraylib.a; path = "../../../../../../../Applications/raylib-master/src/libraylib.a"; sourceTree = "<group>"; };
-		FA9C10D1238B26CE00CFF97C /* Shotlist.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = Shotlist.hpp; sourceTree = "<group>"; };
+		FAF02CE823A2E77A000935FF /* constants.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = constants.hpp; path = Files/constants.hpp; sourceTree = SOURCE_ROOT; };
+		FAF02CEB23A2E814000935FF /* Shot.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Shot.hpp; sourceTree = SOURCE_ROOT; };
+		FAF02CEC23A2E814000935FF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
+		FAF02CED23A2E814000935FF /* Players.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Players.hpp; sourceTree = SOURCE_ROOT; };
+		FAF02CEE23A2E814000935FF /* Shotlist.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Shotlist.hpp; sourceTree = SOURCE_ROOT; };
+		FAF02CEF23A2E814000935FF /* Platforms.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Platforms.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,12 +78,12 @@
 		FA67958F2383EED100DACF6B /* Smash_Fighters */ = {
 			isa = PBXGroup;
 			children = (
-				FA6795902383EED100DACF6B /* main.cpp */,
-				FA4B9E9E238760F80089FF43 /* constants.hpp */,
-				FA4B9E9C23875B570089FF43 /* Platforms.hpp */,
-				FA4B9EA3238769800089FF43 /* Shot.hpp */,
-				FA9C10D1238B26CE00CFF97C /* Shotlist.hpp */,
-				FA4B9E9F2387669D0089FF43 /* Players.hpp */,
+				FAF02CEC23A2E814000935FF /* main.cpp */,
+				FAF02CE823A2E77A000935FF /* constants.hpp */,
+				FAF02CEF23A2E814000935FF /* Platforms.hpp */,
+				FAF02CEB23A2E814000935FF /* Shot.hpp */,
+				FAF02CEE23A2E814000935FF /* Shotlist.hpp */,
+				FAF02CED23A2E814000935FF /* Players.hpp */,
 			);
 			path = Smash_Fighters;
 			sourceTree = "<group>";
@@ -156,7 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA6795912383EED100DACF6B /* main.cpp in Sources */,
+				FAF02CF023A2E814000935FF /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

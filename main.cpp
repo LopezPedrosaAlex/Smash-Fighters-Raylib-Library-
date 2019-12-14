@@ -16,17 +16,17 @@
 using namespace std;
 
 void loadTX() {
-    TXmap = LoadTexture("/Users/Alex/Desktop/Extra_Projects/Xcode/Games/Smash_Fighters/Smash_Fighters/Fondo.png");
-    TXplayer1 = LoadTexture("/Users/Alex/Desktop/Extra_Projects/Xcode/Games/Smash_Fighters/Smash_Fighters/Jugador1.png");
-    TXplayer1Inverse = LoadTexture("/Users/Alex/Desktop/Extra_Projects/Xcode/Games/Smash_Fighters/Smash_Fighters/Jugador1Reves.png");
-    TXplayer2 = LoadTexture("/Users/Alex/Desktop/Extra_Projects/Xcode/Games/Smash_Fighters/Smash_Fighters/Jugador2.png");
-    TXplayer2Inverse = LoadTexture("/Users/Alex/Desktop/Extra_Projects/Xcode/Games/Smash_Fighters/Smash_Fighters/Jugador2Reves.png");
-    TXbullet1 = LoadTexture("/Users/Alex/Desktop/Extra_Projects/Xcode/Games/Smash_Fighters/Smash_Fighters/bala1.png");
-    TXbullet1Inverse = LoadTexture("/Users/Alex/Desktop/Extra_Projects/Xcode/Games/Smash_Fighters/Smash_Fighters/Bala1Reves.png");
-    TXplayer1SR = LoadTexture("/Users/Alex/Desktop/Extra_Projects/Xcode/Games/Smash_Fighters/Smash_Fighters/J1disparader.png");
-    TXplayer1SD = LoadTexture("/Users/Alex/Desktop/Extra_Projects/Xcode/Games/Smash_Fighters/Smash_Fighters/J1disparaizq.png");
-    TXplayer2SR = LoadTexture("/Users/Alex/Desktop/Extra_Projects/Xcode/Games/Smash_Fighters/Smash_Fighters/J2disparader.png");
-    TXplayer2SD = LoadTexture("/Users/Alex/Desktop/Extra_Projects/Xcode/Games/Smash_Fighters/Smash_Fighters/J2disparaizq.png");
+    TXmap = LoadTexture("/Users/Alex/Desktop/Github/Smash_Fighters/Files/Fondo.png");
+    TXplayer1 = LoadTexture("/Users/Alex/Desktop/Github/Smash_Fighters/Files/Jugador1.png");
+    TXplayer1Inverse = LoadTexture("/Users/Alex/Desktop/Github/Smash_Fighters/Files/Jugador1Reves.png");
+    TXplayer2 = LoadTexture("/Users/Alex/Desktop/Github/Smash_Fighters/Files/Jugador2.png");
+    TXplayer2Inverse = LoadTexture("/Users/Alex/Desktop/Github/Smash_Fighters/Files/Jugador2Reves.png");
+    TXbullet1 = LoadTexture("/Users/Alex/Desktop/Github/Smash_Fighters/Files/bala1.png");
+    TXbullet1Inverse = LoadTexture("/Users/Alex/Desktop/Github/Smash_Fighters/Files/Bala1Reves.png");
+    TXplayer1SR = LoadTexture("/Users/Alex/Desktop/Github/Smash_Fighters/Files/J1disparader.png");
+    TXplayer1SD = LoadTexture("/Users/Alex/Desktop/Github/Smash_Fighters/Files/J1disparaizq.png");
+    TXplayer2SR = LoadTexture("/Users/Alex/Desktop/Github/Smash_Fighters/Files/J2disparader.png");
+    TXplayer2SD = LoadTexture("/Users/Alex/Desktop/Github/Smash_Fighters/Files/J2disparaizq.png");
 }
 
 int main() {
@@ -83,16 +83,17 @@ int main() {
             if(!game_over1 && !game_over2) {
                 
                 //Movement
-                P1.move(TXplayer1, false, false);
-                P2.move(TXplayer2, false, false);
-                if (IsKeyDown(KEY_LEFT))    { P1.move(TXplayer1, true, false); }
-                else if (IsKeyDown(KEY_RIGHT))    { P1.move(TXplayer1, false, true); }
-                if (IsKeyDown(KEY_A))    { P2.move(TXplayer2, true, false); }
-                else if (IsKeyDown(KEY_D))    { P2.move(TXplayer2, false, true); }
+                if(IsKeyUp(KEY_LEFT) && IsKeyUp(KEY_RIGHT))     P1.move(TXplayer1, false, false);
+                else if (IsKeyDown(KEY_LEFT))                   P1.move(TXplayer1, true, false);
+                else if (IsKeyDown(KEY_RIGHT))                  P1.move(TXplayer1, false, true);
+                
+                if(IsKeyUp(KEY_A) && IsKeyUp(KEY_D))            P2.move(TXplayer2, false, false);
+                else if (IsKeyDown(KEY_A))                      P2.move(TXplayer2, true, false);
+                else if (IsKeyDown(KEY_D))                      P2.move(TXplayer2, false, true);
                 
                 SL.move();
-                if (IsKeyPressed(KEY_UP))    { P1.jump(); }
-                if (IsKeyPressed(KEY_W))     { P2.jump(); }
+                if (IsKeyPressed(KEY_UP))    P1.jump();
+                if (IsKeyPressed(KEY_W))     P2.jump(); 
             }
             
             //Limits
